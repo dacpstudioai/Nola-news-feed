@@ -158,10 +158,12 @@
     <span class="dept-tag">Hospitality</span>
     <span class="dept-tag">Marketing</span>
     <span class="dept-tag">Operations</span>
+    <span class="dept-tag">Finance</span>
+    <span class="dept-tag">Risk &amp; Compliance</span>
   </div>
   <div class="stats-bar">
     <div><span class="stat-value" id="stat-total">—</span><span class="stat-label">Stories</span></div>
-    <div><span class="stat-value">6</span><span class="stat-label">Departments</span></div>
+    <div><span class="stat-value">10</span><span class="stat-label">Departments</span></div>
     <div><span class="stat-value">Weekly</span><span class="stat-label">Cadence</span></div>
   </div>
 </div>
@@ -174,6 +176,11 @@
   <button class="filter-btn" onclick="filterCategory('Real Estate', this)">🏢 Real Estate</button>
   <button class="filter-btn" onclick="filterCategory('Economy', this)">📈 Economy</button>
   <button class="filter-btn" onclick="filterCategory('Marketing', this)">📣 Marketing</button>
+  <button class="filter-btn" onclick="filterCategory('Investment', this)">💰 Investment</button>
+  <button class="filter-btn" onclick="filterCategory('Regulatory', this)">⚖️ Regulatory</button>
+  <button class="filter-btn" onclick="filterCategory('Weather', this)">🌀 Weather</button>
+  <button class="filter-btn" onclick="filterCategory('Workforce', this)">👷 Workforce</button>
+  <button class="filter-btn" onclick="filterCategory('Gov Contracts', this)">🤝 Gov Contracts</button>
 </div>
 
 <div class="main" id="main-content">
@@ -209,12 +216,17 @@ const LOGO_BLACK = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABTYAAAF4CAYAAA
 const GIST_URL = 'https://gist.githubusercontent.com/dacpstudioai/1be8b7b7654e04f856990521e81b1eea/raw/louisiana-news.xml';
 
 const CATEGORIES = {
-  'Construction': { icon: '🏗', label: 'Construction & Contracts',   dept: 'Construction · Operations' },
-  'AI & Tech':    { icon: '🤖', label: 'AI & Technology',             dept: 'Executive · Technology' },
-  'Hospitality':  { icon: '🏨', label: 'Hospitality & Tourism',       dept: 'Hospitality · Marketing' },
-  'Real Estate':  { icon: '🏢', label: 'Real Estate & Development',   dept: 'Real Estate · Executive' },
-  'Economy':      { icon: '📈', label: 'Economy & Legislation',        dept: 'Executive · Finance' },
-  'Marketing':    { icon: '📣', label: 'Marketing & Media',            dept: 'Marketing · Creative' },
+  'Construction':  { icon: '🏗',  label: 'Construction & Contracts',      dept: 'Construction · Operations' },
+  'AI & Tech':     { icon: '🤖',  label: 'AI & Technology',                dept: 'Executive · Technology' },
+  'Hospitality':   { icon: '🏨',  label: 'Hospitality & Tourism',          dept: 'Hospitality · Marketing' },
+  'Real Estate':   { icon: '🏢',  label: 'Real Estate & Development',      dept: 'Real Estate · Executive' },
+  'Economy':       { icon: '📈',  label: 'Economy & Legislation',           dept: 'Executive · Finance' },
+  'Marketing':     { icon: '📣',  label: 'Marketing & Media',               dept: 'Marketing · Creative' },
+  'Investment':    { icon: '💰',  label: 'Investment & Incentives',         dept: 'Executive · Finance' },
+  'Regulatory':    { icon: '⚖️',  label: 'Regulatory & Compliance',         dept: 'Operations · Legal' },
+  'Weather':       { icon: '🌀',  label: 'Weather & Infrastructure Risk',   dept: 'Operations · Executive' },
+  'Workforce':     { icon: '👷',  label: 'Workforce & Labor Market',        dept: 'Operations · HR' },
+  'Gov Contracts': { icon: '🤝',  label: 'Government & Contracts',          dept: 'Construction · Executive' },
 };
 
 let allItems = [];
